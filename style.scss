@@ -1,0 +1,143 @@
+$c-frame: #cb0008;
+$c-frame-glow: hsl(358, 52%, 59%);
+$c-frame-glow2: hsl(358, 43%, 80%);
+$c-frame-shade: hsl(349, 96%, 25%);
+$c-frame-border: #a60321;
+$c-font-title: #ebc564;
+$c-button: hsl(43, 77%, 45%);
+$c-button-grad-light: hsl(43, 77%, 95%);
+$c-button-grad-dark: #ebc564;
+$c-button-text: hsl(43, 77%, 20%);
+$c-button-active: hsl(24, 76%, 50%);
+$c: rgb(247, 153, 255);
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.red-frame {
+	background-color: $c-frame;
+	border: 5px solid $c-frame-border;
+	border-radius: 50px;
+	box-shadow: inset 0 0 10px $c-frame-shade, 0 0 20px $c-frame-shade;
+
+	h1 {
+		font-family: "Cabin Sketch", cursive;
+		font-size: 3rem;
+		color: $c-font-title;
+	}
+}
+
+.canvas {
+	border: 5px solid $c-frame-glow;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: white;
+	// box-shadow: inset 0 0 10px $c-frame-shade, 0 0 10px $c-frame-shade;
+	box-shadow: 0 0 10px $c-frame-glow2;
+	border-radius: 5px;
+}
+
+.pixel {
+	border: 1px solid #eeeeee;
+	z-index: unset;
+	border-radius: 3px;
+}
+
+.btn-round {
+	border-radius: 50% !important;
+	padding: 0.5rem;
+	width: 70px;
+	height: 70px;
+	box-shadow: inset 0 0 10px $c-button, 0 0 10px $c-frame-shade;
+	border: 5px solid $c-button;
+	background-image: linear-gradient(
+		to bottom right,
+		$c-button-grad-light,
+		$c-button-grad-dark
+	);
+	color: $c-button-text;
+	text-shadow: 0 0 10px $c-button-grad-light;
+}
+
+.btn-round:hover,
+.btn-round:focus {
+	box-shadow: inset 0 0 15px $c-button, 0 0 15px $c-frame-shade;
+	opacity: 0.95;
+}
+
+.btn-round:active {
+	border: 5px solid $c-button;
+}
+
+.btn-round:focus {
+	box-shadow: 0 0 8px $c-frame-shade;
+}
+
+.btn-round-active {
+	box-shadow: 0 0 2px $c-frame-shade;
+	border: 5px solid $c-button-active;
+	background-image: linear-gradient(
+		to bottom right,
+		$c-button-grad-light,
+		$c-button-active
+	);
+	opacity: 0.9;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.red-frame {
+		width: 300px + 300px/4;
+		h1 {
+			font-family: "Cabin Sketch", cursive;
+			font-size: 2rem;
+			color: $c-font-title;
+		}
+	}
+	#canvas {
+		width: 300px;
+	}
+	.btn-round {
+		font-size: 0.8rem;
+		width: 60px;
+		height: 60px;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.red-frame {
+		width: 500px + 500px/4;
+	}
+	#canvas {
+		width: 95%;
+		width: 500px;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.red-frame {
+		width: 600px + 600px/4;
+	}
+	#canvas {
+		width: 600px;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.red-frame {
+		width: 850px + 850px/4;
+	}
+	#canvas {
+		width: 850px;
+	}
+}
